@@ -1,4 +1,8 @@
 let arrNhanVien = []
+document.querySelector("#btnThem").onclick = function(){
+    document.querySelector("#btnThemNV").disabled = false
+    document.querySelector("#btnCapNhat").disabled = true
+}
 
 function getInfoAndCheckValidation() {
     let arrIdInput = document.querySelectorAll("#myModal input, #myModal select")
@@ -131,11 +135,11 @@ function getInfoNV(tk) {
         }
     }
     document.querySelector("#btnCapNhat").setAttribute("data-dismiss","modal")
-
+    document.querySelector("#btnThemNV").disabled = true
+    document.querySelector("#btnCapNhat").disabled = false
 }
 //update
-document.getElementById("btnCapNhat").onclick = function () {
-
+function updateNV () {
     let nhanVien = getInfoAndCheckValidation();
     if (!nhanVien) {
         return
@@ -149,10 +153,11 @@ document.getElementById("btnCapNhat").onclick = function () {
         arrNhanVien[index] = nhanVien
         resetForm();
     }
-
     saveLocalStorage();
     renderDSNV();
 }
+document.querySelector("#btnCapNhat").onclick= updateNV;
+
 
 function searchNhanVien(event) {
     let newKeyWord = removeVietnameseTones(
