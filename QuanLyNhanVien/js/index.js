@@ -4,6 +4,8 @@ document.querySelector("#btnThem").onclick = function(){
     document.querySelector("#btnCapNhat").disabled = true
 }
 
+document.querySelector("#btnDong") .onclick = resetForm;
+
 function getInfoAndCheckValidation() {
     let arrIdInput = document.querySelectorAll("#myModal input, #myModal select")
     let nhanVien = new NhanVien();
