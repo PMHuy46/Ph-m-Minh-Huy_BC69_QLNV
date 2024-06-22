@@ -130,8 +130,10 @@ function getInfoNV(tk) {
             }
         }
     }
-}
+    document.querySelector("#btnCapNhat").setAttribute("data-dismiss","modal")
 
+}
+//update
 document.getElementById("btnCapNhat").onclick = function () {
 
     let nhanVien = getInfoAndCheckValidation();

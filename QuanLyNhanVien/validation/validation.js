@@ -133,7 +133,7 @@ function checkGioLam(value, errorEle) {
         return false
     }
     let checkNumber = /^(\d{2}|1\d{2}|200)(\.\d+)?$/;
-    let isValid = regexDate.test(value);
+    let isValid = checkNumber.test(value);
     if (!isValid) {
         errorEle.innerHTML = "Thời gian làm phải từ 80 đến 200 giờ ";
         errorEle.classList.add("d-block")
@@ -159,3 +159,6 @@ function checkGioLam(value, errorEle) {
     //     }
     // }
 }
+let x= 1
+x+1
+console.log(x)
